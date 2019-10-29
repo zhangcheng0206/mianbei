@@ -1,97 +1,166 @@
 <!DOCTYPE html>
 <html>
-	<head>
+		<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>详情</title>
-		<link rel="stylesheet" href="css/detail.css" />
+		<title>猫-详情页</title>
 		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/detail.css"/>
+
+		<script type="text/javascript">
+			var fs = document.documentElement.clientWidth / 750  * 100; 
+			document.querySelector("html").style.fontSize = fs + "px";
+		</script>
 	</head>
 	<body>
 		<header>
-			<span class="iconfont icon-fanhui"></span>
-			<h2>*****产品介绍</h2>
-			<span id="btnMenu" class="iconfont icon-menu"></span>
+			<a href="index.html "> <i class="iconfont icon-fanhui"> </i></a> 
+			<span>赚钱计划8号1期</span>
+			
+			<i class="iconfont icon-caidan" id="menu"> </i>
 		</header>
 		
-		<section class="productDate">
-			<h3>9.2% + 0.5%</h3>
-			<p>9.7%(9.2% 加息0.5%)</p>
+		<section class="data">
+			<p class="data1"> <strong>9.2%+0.5%</strong></p>
+			<p class="data2"> <em>9.7%(.........0.5%)</em></p>
 		</section>
-		<ul class="productInfo">
-			<li>1000元起投</li>
-			<li>期限180天</li>
-		</ul>
 		
-		<section class="product-support">
+		<section class="support">
+			<div class="keys">
+				<span>1000元起投</span>
+				<span>期限180天</span>
+			</div>
 			<div>
-				<span>省级法律所法律支持</span>
-				<span>省级法律所法律支持</span>
-				<span>省级法律所法律支持</span>
-				<span>省级法律所法律支持</span>
+				<ul>
+					<li> <i class="iconfont icon-xinshouzhiyin"></i>省级律所法律支持</li>
+					<li><i class="iconfont icon-xinshouzhiyin"></i>浙大友创战略入股</li>
+					<li><i class="iconfont icon-xinshouzhiyin"></i>省级律所法律支持</li>
+					<li><i class="iconfont icon-xinshouzhiyin"></i>浙大友创战略入股</li>
+				</ul>
 			</div>
 		</section>
 		
-		
-		<section class="progress">
-			<div id = "container" class="p-container" data-progress="50">
-				<div id="pbody" class="p-body"></div>
-				<div id="pdata" class="p-data">
-					<span id="pvalue">20%</span>
-					<span class="tri"></span>
-				</div>
+		<section class="proccess">
+			
+			<div class="pro-wrap" data-proccess="100">
+				<div class="pro-front"></div>
+				<div class="pro-block">0%</div>
 			</div>
+			
+			<p class="pro-info">
+				<span>已投资<em>37</em>人</span>
+				<span>剩余可投<em>664444</em>元</span>
+			</p>
+			
 		</section>
 		
-		<div id="mask" class="mask">
-			<ul>
-				<li><a href=""><span class="iconfont icon-book"></span><i>首页</i></a></li>
-				<li><a href=""><span class="iconfont icon-book"></span><i>安全保障</i></a></li>
-				<li><a href=""><span class="iconfont icon-book"></span><i>我要投资</i></a></li>
-				<li><a href=""><span class="iconfont icon-book"></span><i>帐户中心</i></a></li>
-			</ul>
-
+		<section class="footerlink">
+			<p><a href="">查看项目详情</a></p>
+		</section>
+		<footer >
+			<a href="" class="earnings">收益估算</a>
+			<a href="" class="investment">立即投资</a>
+		</footer>
+		
+		<div id="mask">
+			
+			<div class="nav">
+				<a href="">
+					<i class="iconfont icon-zhuye"></i>  
+					<span>主页</span>  
+				</a>
+				<a href="">
+					<i class="iconfont icon-suo"></i>  
+					<span>安全保障</span>  
+				</a>
+				<a href="">
+					<i class="iconfont icon-touzi"></i>  
+					<span>我要投资</span>  
+				</a>
+				<a href="">
+					<i class="iconfont icon-jiaruwomen"></i>  
+					<span>帐户中心</span>  
+				</a>
+			</div>
+			
 		</div>
 		
-		<footer>
-			<span>收益估算</span>
-			<a class="btn" href="">立刻投资</a>
-		</footer>
-		<script src="js/zeptoJs/zepto.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
-
-		<script type="text/javascript">
-			 
+		<script src="js/zepto/zepto.js"></script>
+		
+		<script src="js/zepto/event.js"></script>
+		<script src="js/zepto/touch.js"></script>
+		<script>
+		
+			window.requestAnimFrame = (function(){
+				  return  window.requestAnimationFrame       ||
+				          window.webkitRequestAnimationFrame ||
+				          window.mozRequestAnimationFrame    ||
+				          function( callback ){
+				            window.setTimeout(callback, 1000 / 60);
+				          };
+			})();
+			
+			window.cancelrequestAnimFrame = (function(){
+				  return  window.cancelAnimationFrame   ||
+				          window.webkitCancelAnimationFrame ||
+				          window.mozCancelAnimationFrame    ||
+				          window.clearTimeout;
+				          
+			})();
+			
+			
+		
 			$(function(){
-				var totalWidth = $("#container").width(),
-				 	 maxValue = $("#container").data("progress"),
-				 	 bodywidth = totalWidth * maxValue / 100,
-				 	 timer,
-				 	 currentValue = 0;
-				 $("#pbody").css("width", bodywidth);
-				 
-				//（1）前景色中的width  = 总的宽度* 56%
-				//（2）游标的left        =  前景色中的width - 游标的宽度的一半
-				$("#pdata").css("left", bodywidth - $("#pdata").width() / 2);
+				//假设当前的进度值是 50
+				var value = $(".pro-wrap").attr("data-proccess");
 				
-				timer = setInterval(function(){
-					
-					currentValue +=10;
-					
-					if(currentValue >= maxValue){
-						clearInterval(timer);
-						$("#pvalue").html( maxValue + "%");
-					}
-					else{
-						$("#pvalue").html( currentValue + "%");
-					}
-					
-				},50);
+				var currentValue = 0;
+				var step = value / 30;
+				var timerId;
 				
-				document.getElementById("btnMenu").addEventListener("touchstart",function(){
-					$("#mask").toggle();
-				});
+				//（1）红色的前景的宽度:从0 --- 整个宽度的一半       c3动画
+				var totalWidth = $(".pro-wrap").width();
+				var frontWidth = totalWidth * value/100 ; 
+				$(".pro-front").css("width",   frontWidth);
+	
+				// （2） left从0  到  红色的前景的宽度 - 自己宽度/2  c3动画
+				$(".pro-block").css("left", frontWidth - $(".pro-block").width()/2  );
+				
+				// (3)数字从0不断增加 到 value
+				function  addNumber(){
+					//currentV
+					console.info("addNumber"); //1s 60次
+					currentValue = currentValue + step;
+					
+					currentValue = currentValue.toFixed(2);//保留两位有效数字
+					
+					//Math.max();
+					currentValue = currentValue > value ?  value : currentValue;
+					
+					$(".pro-block").html( currentValue + "%");
+					
+					timerId = requestAnimFrame(function(){
+						addNumber();
+					});
+					
+					if(currentValue >= value) {
+						cancelrequestAnimFrame(timerId);
+					}
+				}
+				
+				addNumber();
 			});
+			
+			
+			$(function(){
+			
+				$("#menu").on("tap",function(){
+					console.info("tap");
+					
+					$("#mask").toggle();
+				})
+			});
+			
 			
 		</script>
 	</body>

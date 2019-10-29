@@ -19,7 +19,8 @@
   em,i{font-style: normal;}
 }
 .reset-sina(){
-  html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+  html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img,div,section,footer,header { margin:0; padding:0; box-sizing: border-box;}
+  h1,h2,h3,h4,h5,h6{font-weight: normal;}
   fieldset, img { border:none; }
   img{display: block;}
   address, caption, cite, code, dfn, th, var { font-style:normal; font-weight:normal; }
@@ -32,10 +33,11 @@
   textarea { resize:none; }
   input,textarea{background: none; border: none;}
   table { border-collapse:collapse; }
-  body { color:#333; font:12px/20px "SimSun","宋体","Arial Narrow",HELVETICA; background:#fff; }
-  a { color:#666; text-decoration:none; }
-  a:visited { color:#666; }
-  a:hover, a:active, a:focus { color:#ff8400; text-decoration:underline; }
+  body { color:#333; font:12px/1.2 "微软雅黑","SimSun","Arial Narrow",HELVETICA; background:#fff; }
+  a {text-decoration:none; }
+//a:visited { }
+//a:hover, a:active, a:focus {text-decoration:underline; }
+  em,i{font-style: normal;}
 }
 //去除a和label的虚线
 .remove_dotted(){
@@ -416,13 +418,7 @@
 {
     width: 0; height: 0; overflow:hidden;
 }
-//单独方向
-.triangle-b(@w:5px,@color:#ccc){
-  border-style:solid dashed dashed dashed;
-  border-color:@color transparent transparent transparent;
-  border-width:@w;
-  .triangle-compatible();
-}
+
 .triangle-l(@w:5px,@color:#ccc){
   border-style:dashed solid dashed dashed;
   border-color:transparent @color transparent transparent;
@@ -476,4 +472,59 @@
 .ellipsis(@substract:0) {
   .ellipsis-basic();
   width:100% - @substract;
+}
+
+
+//
+@basicWidth : 100;
+
+//单独方向
+.triangle-b(@w:5px,@color:#ccc){
+  border-style:solid dashed dashed dashed;
+  border-color:@color transparent transparent transparent;
+  border-width:@w/ @basicWidth * 1rem;;
+  .triangle-compatible();
+}
+
+.hc(){
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+}
+.h(@v){ height : @v / @basicWidth * 1rem;}
+.lh(@v){ line-height : @v / @basicWidth * 1rem;}
+.p(@v){ padding: @v / @basicWidth * 1rem;}
+.pt(@v){ padding-top : @v / @basicWidth * 1rem;}
+.pl(@v){ padding-left : @v / @basicWidth * 1rem;}
+.pr(@v){ padding-right : @v / @basicWidth * 1rem;}
+.fs(@v){ font-size:@v / @basicWidth * 1rem;}
+.w(@v){ width:@v / @basicWidth * 1rem;}
+.mt(@v){ margin-top:@v / @basicWidth * 1rem;}
+.ml(@v){ margin-left:@v / @basicWidth * 1rem;}
+.mr(@v){ margin-right:@v / @basicWidth * 1rem;}
+.mb(@v){ margin-bottom:@v / @basicWidth * 1rem;}
+.bs(@v1,@v2){
+    background-size: @v1/@basicWidth*1rem  @v2/@basicWidth*1rem;
+}
+.left(@v){
+    left:@v / @basicWidth * 1rem;
+}
+.top(@v){
+    top:@v / @basicWidth * 1rem;
+}
+.bottom(@v){
+    bottom:@v / @basicWidth * 1rem;
+}
+
+//flex 两端对齐
+.flex_b(){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+//flex 分散对齐
+.flex_a(){
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }

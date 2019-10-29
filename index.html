@@ -4,101 +4,147 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>新一代棉被行</title>
-		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+
+		<script type="text/javascript">
+			var fs = document.documentElement.clientWidth / 750  * 100; 
+			document.querySelector("html").style.fontSize = fs + "px";
+		</script>
 	</head>
 	<body>
 		<header>
 			<div class="logo">
 				<a href="">
+					<img src="img/logo.png" alt="" />
 					<h1>新一代棉被行</h1>
 				</a>
 			</div>
-			<div class="loginArea">
-				咨询热线：15347123920
+			<div>
+				<a href="">咨询热线</a>：<a href="">15347123920</a> 
 			</div>
+			
 		</header>
 		
+		<section class="topnav">
+			<a href="" class="current">首页</a>
+			<a href="">热销商品</a>
+			<a href="">我的客户</a>
+		</section>
 		
+	<!--轮播图-->
 		<div id='slider' class='swipe'>
-		  <div class='swipe-wrap'>
-		    <div><a href=""><img src="img/slider1.jpg"/></a></div>
-		    <div><a href=""><img src="img/slider2.jpg"/></a></div>
-		  </div>
-		  <ol class="slider-indirector">
-		  	<li class="current"></li>
-		  	<li></li>
-		  </ol>
+			  <div class='swipe-wrap'>
+			    <div class="page">
+			    	<img src="img/slider1.jpg" />
+			    </div>
+			    <div class="page">
+			    	<img src="img/slider2.jpg" alt="" />
+			    </div>
+			   
+			  </div>
+		  
+		  
+		   <div class="indirector">
+		    	<span class="on"></span>
+		    	<span></span>
+		    </div>
+		    
 		</div>
-
-		
-		<section class="hot">
-			<h2 class=" product title"><span>热门产品</span><a href="">精品展示</a></h2>
-				<ul>
-					<li><img src="img/1.jpg"/></li>
-					<li><img src="img/2.jpg"/></li>
-					<li><img src="img/3.jpg"/></li>
-					<li><img src="img/4.jpg"/></li>
-					<li><img src="img/5.jpg"/></li>
-					<li><img src="img/6.jpg"/></li>
-					<li><img src="img/7.jpg"/></li>
-					<li><img src="img/8.jpg"/></li>
-					
-				</ul>
+	<!--轮播图-->	
+	
+	<!--用户导航-->
+		<section class="usernav">
+			<a href="">
+				<i class="iconfont icon-suo"></i>
+				<div>安全保障</div>
+			</a>
+			<a href="">
+				<i class="iconfont icon-women"></i>
+				<div>用心服务</div>
+			</a>
+			<a href="">
+				<i class="iconfont icon-xinshouzhiyin"></i>
+				<div>放心使用</div>
+			</a>
+			<a href="help.html">
+				<i class="iconfont icon-wenti"></i>
+				<div>售后服务</div>
+			</a>
 		</section>
-		
-		
-		
-		<section class="footer">
-			<div class="links"><a href="">三十年行业经验 </a><a href="">|</a><a href="">品质保证</a><a href="">|</a><a href="">微信扫一扫（章登耀）</a></div>
-			<div><img src="img/ewm.png"/> </div>
-		<div class="copyright">Reserved. </div>
+	
+	<!--热门产品-->
+		<section class="hotproducts">
+			<div class="title">
+				<h3>热门产品</h3> <a href="">精品展示</a>
+			</div>
+			<ul class="itemlist">
+				<li class="item">
+					<img src="img/1.jpg"/>
+				</li>
+				<li class="item">
+					<img src="img/2.jpg"/>
+				</li>
+				<li class="item">
+					<img src="img/3.jpg"/>
+				</li>
+				<li class="item">
+					<img src="img/6.jpg"/>
+				</li>
+				<li class="item">
+					<img src="img/7.jpg"/>
+				</li>
+				<li class="item">
+					<img src="img/8.jpg"/>
+				</li>
+			</ul>
+			
 		</section>
-		<script src="js/swipe.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/zeptoJs/zepto.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/jquery.classyloader.js" type="text/javascript" charset="utf-8"></script>
+	
+	
+	
+	<!--版权声明-->	
+		<footer>
+			<p class="links"> <a href="">三十年行业经验</a> | <a href="">品质保证</a> | <a href="">微信关注（章登耀）</a> </p>
+			<div style="width:500px;overflow:hidden;position:relative;display:table-cell;text-align:center;vertical-align:middle">
+                <img style="position:relative;top:35%;left:35%;"   src="img/ewm.png"/>
+  </div>
+			<p class="copyright"> &copy;新一代棉被加工行    湖北巴东西陵路94号</p>
+		</footer>
 		
+		<script src="./js/zepto/zepto.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/zepto/event.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/swipe.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			
-			$(function(){
+			window.mySwipe = Swipe(document.getElementById('slider'),
+				{
+				  startSlide: 0, //第几张开始
+				  speed: 400,
+				  auto: 2000, 	  //是否自动播放。为0就不会自动播放
+				  continuous: true,//无限循环
+				  disableScroll: false,
+				  stopPropagation: false,
+				  callback: function(index, elem) {
+				  	
+				    $(".indirector span").eq(index%2).addClass("on").siblings().removeClass("on");
+				  	console.info("callback",index,elem);
+				  	
+				  },
+				  transitionEnd: function(index, elem) {
+				  	console.info("transitionEnd",index,elem)
+				  	
+				  }
+				}
+			);
 			
-				var lis = document.querySelectorAll("#slider .slider-indirector li");
-				
-				window.mySwipe = Swipe(document.getElementById('slider'),{
-					callback: function(index, elem) {
-						console.info(index,elem);
-						for (var i = 0; i < lis.length; i++) {
-							lis[ i% 2].className = "";
-						}
-						lis[index%2].className = "current";
-					}
-				});
-				
-				
-				//圆形进度条
-				var width = 68 * document.documentElement.offsetWidth/375,
-					d =  width * 0.4,
-					linewith = width/40,
-					fs = 20 * document.documentElement.offsetWidth/375 +"px";
-				var loaders = $('.loader');
-				loaders.each(function(index,item){
-					var value = $(this).data("number");
-					console.info(index,item,value);
-					$(item).ClassyLoader({
-						fontColor:"#FB4034",
-					 	width: width,
-		            	height: width,
-		                percentage: value, /* 数值 */
-		                speed: 20,
-		                fontSize: fs,
-		                diameter: d,
-		                lineColor: '#FA3012',
-		                remainingLineColor: '#FFE2E0',
-		                lineWidth: linewith
-		           });
-				})
-			});
-			 
+			$(".indirector span").on("click",function(){
+				var index = $(this).index();
+				mySwipe.slide(index, 2000)
+			})
+			
+			
 		</script>
+		
 	</body>
 </html>

@@ -1,162 +1,202 @@
-@import "z.less";
-@import "public.less";
-.reset();
+//详情页
+@import "zcm.less";
 
-/*-------------------------顶部导航----------------------*/
+body{
+    background-color: #fff;
+}
 header{
-    .h(94);
-    .padding(0,30,0,30);
     background-color: #FA3432;
+    .h(92);
+    
+    .flex_b();
+    
+    .fs(28);
     color:#fff;
-    display: flex; justify-content: space-between;align-items: center;
-    h2{.fs(30);};
-    .iconfont{.fs(50);}
+    a{color:#fff;}
+    .pl(23);
+    .pr(23);
+    .iconfont{.fs(30);}
 }
-
-
-.productDate{
-    .padding(50,0,0,0);
+.data{
+    color:#fff; 
     .h(222);
-    color:#fff;
+    .pt(50);
     .tc();
-    background-image: linear-gradient(#ff3c01,#d80607);
-    h3{.fs(68);}
-    p{.margin(20,0,0,0);.fs(30);}
-}
-.productInfo{
-    background-color: #fff;
-    color:#777;
-    .fs(30);
-    display: flex;align-items: center;
-    .h(79);
-    border-bottom:1px solid #f1f0f0;
-    li{flex:1 1 auto;.tc();}
-    li:first-child{border-right:1px solid red;}
+     background:#ff3c01;
+     background: linear-gradient(to bottom ,#ff3c01, #d80607 );
+     .data1{.fs(68);.mb(42)}
+     .data2{.fs(30);}
 }
 
-.product-support{
-    background-color: #fff;
-    .padding(68,0,0,0);
-    display: flex;
-    div{
-        .fs(24);
-        color:#ffc166;
-        margin:auto;
-        .w(640);
-        .h(200);
-        background: url(../img/detail_icon_bg.png) no-repeat center center;
-        background-size: 100% 100%;
-        
-        span{float:left;width:50%;
-            .h(100);.line-height(100);.tc();
+.support{
+    .keys{
+        .h(79);
+        .fs(30);
+        color:#777;
+        .flex_a();
+        border-bottom:1px solid #F1F0F0;
+        span{
+            //flex:1 1 auto;
+            width: 50%;
+            .tc();
+            &:first-child{
+                border-right:1px solid #ddd;
+            }
         }
+    }
+    ul{
         
+        .w(640);
+        .h(203);
+        margin: 0 auto;
+        .mt(30);
+        background:url(../img/detail_icon_bg.png) no-repeat;
+        background-size: 100% 100% ;
+        display: flex;
+        flex-wrap: wrap;
+        //align-items: center;
+        align-content: space-around;
+        
+        li{
+            color:#ffc166;
+            .fs(24);
+            width: 50%;
+            .tc();
+            .lh(55);
+            
+            .iconfont{
+                display: inline-block;
+                .w(55);
+                .h(55);
+                .fs(26);
+                
+                border-radius: 50%;
+                border: 3px solid #f5f5f5;
+                .mr(4);
+            
+            }
+        }
     }
 }
 
-//<section class="progress">
-//          
-//          <div class="p-container">
-//              <div class="p-body"></div>
-//              <div class="p-data">37%</div>
-//          </div>
-//      </section>
-.progress{
-    .margin(80,0,0,0);
-    .p-container{
-        margin:0 auto;
-        position:relative;
-        .w(682);.h(16);
-        .border-radius(8);
+.proccess{
+    .mt(50);
+    .pro-wrap{
+        position: relative;
+        .w(660);
+        .h(15);
+        margin: 0 auto;
         background-color: #f0f0f0;
-        .p-body{
-            transition: width .5s;
-            .border-radius(8);
+        border-radius: 8px;
+        
+        .pro-front{
             position: absolute;
-            left:0;top:0;
-            .w(0);.h(16);
-            background-color: #FB0502;
+            background-color: #fb0502;
+            .w(0);
+            .h(15);
+            transition: width .5s ease-in-out;
+            border-radius: 8px;
         }
-        .p-data{
-            transition: left .5s;
-            .fs(24);
-            .w(60);.h(32); .line-height(32);
-            color:#fff;
-            .tc();
-            background-color: #FB0502;
+        .pro-block{
             position: absolute;
-            left:0;top:-30px;
-            .tri{
-                 position: absolute;
-                 left:50%; transform: translateX(-50%); .bottom(-22);
-                .triangle-b(5px,#FB0502);
+            background-color: #fb0502;
+            .w(80);
+            .h(32);
+            .lh(32);
+            .tc();
+            color:#fff;
+            .left(0);
+            transition:left .5s ease-in-out;
+            .top(-50);
+            
+            &:after{
+                content: "";
+                display: block;
+                .triangle-b(12,#fb0502);
+                .top(35);
+                .hc();
             }
         }
         
+    }
+    .pro-info{
+        .w(685);
+        .bc(); //块级元素水平居中
+        .mt(30);
+        .flex_b();
+        color:#808080;
+        .fs(22);
+        em{color:#f00;}
+    }
+   
+}
+
+
+.footerlink{
+    position: fixed;
+    .bottom(140);
+    left:0;right:0;
+    .tc();
+    a{
+        color:#808080;
+        .fs(22);
     }
 }
 footer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
     position: fixed;
     bottom:0;
-    .padding(0,20,0,20);
+    left:0;right:0;
+    .flex_b();
     .h(105);
-   
-    background-color: #f0f0f0;
+    .pl(30);
+    .pr(20);
+    background-color: #f1f1f1;
     
-    span{
-        text-decoration: underline;
+    .earnings{
         color:#f90;
-
         .fs(32);
+        text-decoration: underline;
     }
-    .btn{
-        background-color:#FA3432;
-        .w(517);.h(82);
+    .investment{
+      .fs(32);
         color:#fff;
+        .w(517);
+        .h(82);
+        .lh(82);
+        background-color:#FA3432;
         .tc();
-        .fs(32);
-         .line-height(82);
     }
+    
 }
 
-.mask{
+#mask{
+    position: absolute;
     display: none;
-    position: fixed;
+    left:0;right:0;
     .top(92);
     .bottom(105);
-    left:0;
-    right:0;
-    background-color:rgba(0,0,0,.5);
-//  
+    background-color: rgba(0,0,0,.5);
     
-    ul{
-        background-color:#fff;
-        .padding(40,0,40,0);
-        display: flex;
-        align-items: center;
-        li{
-            flex: 1 1 auto;
-            border-right: 1px solid #FA3432;
-            a{
-                .fs(24);
-                color:#FA3432;
-               display: flex;
-               flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                .iconfont{.fs(40);}
-            }
+    .nav{
+        background-color: #fff;
+        .h(120);
+        .flex_a();
+        a{
+            color:#f00;
+            .fs(28);
+            .tc();
+            width: 25%;
+            .iconfont{
+                 .fs(40);
+                display: block;
+                .bc();
             
-        }
-        li:last-child{
-                 border-right:none;
             }
-    
+            border-right:1px solid #ddd;
+            &:last-child{
+             border-right:none;
+            }
+        }
     }
-    
-    
 }
+
