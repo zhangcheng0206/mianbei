@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		<header>
+			<div class="logo">
+				<a href="">
+					<h1>新一代棉被行</h1>
+				</a>
+			</div>
+			<div class="loginArea">
+				咨询热线：15347123920
+			</div>
+		</header>
+		
+		
+		<div id='slider' class='swipe'>
+		  <div class='swipe-wrap'>
+		    <div><a href=""><img src="img/slider1.jpg"/></a></div>
+		    <div><a href=""><img src="img/slider2.jpg"/></a></div>
+		  </div>
+		</div>
+
+		
+		<div class="hot">
+			<h2 class=" product title"><span>热门产品</span><a href="">更多</a></h2>
+				<ul>
+					<li><img src="1.jpg"/></li>
+					<li><img src="2.jpg"/></li>
+					<li><img src="3.jpg"/></li>
+					<li><img src="4.jpg"/></li>
+					<li><img src="5.jpg"/></li>
+					<li><img src="6.jpg"/></li>
+					<li><img src="7.jpg"/></li>
+					<li><img src="8.jpg"/></li>
+					<li><img src="9.jpg"/></li>
+					<li><img src="10.jpg"/></li>
+					<li><img src="11.jpg"/></li>
+					<li><img src="12.jpg"/></li>
+				</ul>
+		</div>
+		
+		
+		
+		<section class="footer">
+			<div class="links">微信扫一扫欢迎咨询</div>
+			<div class="copyright">Reserved. </div>
+		</section>
+		<script src="js/swipe.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/zeptoJs/zepto.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.classyloader.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript">
+			
+			$(function(){
+			
+				var lis = document.querySelectorAll("#slider .slider-indirector li");
+				
+				window.mySwipe = Swipe(document.getElementById('slider'),{
+					callback: function(index, elem) {
+						console.info(index,elem);
+						for (var i = 0; i < lis.length; i++) {
+							lis[ i% 2].className = "";
+						}
+						lis[index%2].className = "current";
+					}
+				});
+				
+				
+				//圆形进度条
+				var width = 68 * document.documentElement.offsetWidth/375,
+					d =  width * 0.4,
+					linewith = width/40,
+					fs = 20 * document.documentElement.offsetWidth/375 +"px";
+				var loaders = $('.loader');
+				loaders.each(function(index,item){
+					var value = $(this).data("number");
+					console.info(index,item,value);
+					$(item).ClassyLoader({
+						fontColor:"#FB4034",
+					 	width: width,
+		            	height: width,
+		                percentage: value, /* 数值 */
+		                speed: 20,
+		                fontSize: fs,
+		                diameter: d,
+		                lineColor: '#FA3012',
+		                remainingLineColor: '#FFE2E0',
+		                lineWidth: linewith
+		           });
+				})
+			});
+			 
+		</script>
+	</body>
+</html>

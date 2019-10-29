@@ -1,0 +1,36 @@
+@import "z.less";
+@import "public.less";
+.reset();
+
+/*-------------------------顶部导航----------------------*/
+header{
+    .h(94);
+    .padding(0,30,0,30);
+    background-color: #FA3432;
+    color:#fff;
+    display: flex; justify-content: space-between;align-items: center;
+    h2{.fs(30);};
+    .iconfont{.fs(50);}
+}
+
+.nav{
+    .padding(0,30,0,30);
+    .fs(25);
+    li{.margin(27,0,27,0);}
+
+    a{
+        color: #4c4b4b;
+        display: flex; align-items: center;
+        .iconfont{
+            .margin(0,21,0,0);
+            text-align: center;
+            color:#fff;
+            .w(58);.h(58);
+            .border-radius(10);
+            .line-height(58);
+            background-color:#FA9A33;
+        }
+        .icon-right{margin-left:auto;}
+    }
+}
+

@@ -1,0 +1,118 @@
+/*我的工具*/
+@import "z.less";
+//
+//@media only screen and (max-width: 1080px), only screen and (max-device-width:1080px) {
+//   html,body {
+//       font-size:108px;
+//   }
+// }
+//   @media only screen and (max-width: 960px), only screen and (max-device-width:960px) {
+//   html,body {
+//       font-size:96px;
+//   }
+// }
+//   @media only screen and (max-width: 800px), only screen and (max-device-width:800px) {
+//   html,body {
+//       font-size:80px;
+//   }
+// }
+//   @media only screen and (max-width: 720px), only screen and (max-device-width:720px) {
+//   html,body {
+//       font-size:72px;
+//   }
+// }
+//   @media only screen and (max-width: 640px), only screen and (max-device-width:640px) {
+//   html,body {
+//       font-size:64px;
+//   }
+// }
+//   @media only screen and (max-width: 600px), only screen and (max-device-width:600px) {
+//   html,body {
+//       font-size:60px;
+//   }
+// }
+//   @media only screen and (max-width: 540px), only screen and (max-device-width:540px) {
+//   html,body {
+//       font-size:54px;
+//   }
+// }
+//   @media only screen and (max-width: 480px), only screen and (max-device-width:480px) {
+//   html,body {
+//       font-size:48px;
+//   }
+// }
+//   @media only screen and (max-width: 414px), only screen and (max-device-width:414px) {
+//   html,body {
+//       font-size:41.400000000000006px;
+//   }
+// }
+//   @media only screen and (max-width: 400px), only screen and (max-device-width:400px) {
+//   html,body {
+//       font-size:40px;
+//   }
+// }
+//   @media only screen and (max-width: 375px), only screen and (max-device-width:375px) {
+//   html,body {
+//       font-size:37.5px;
+//   }
+// }
+//   @media only screen and (max-width: 360px), only screen and (max-device-width:360px) {
+//   html,body {
+//       font-size:36px;
+//   }
+// }
+//   @media only screen and (max-width: 320px), only screen and (max-device-width:320px) {
+//   html,body {
+//       font-size:32px;
+//   }
+// }
+//   @media only screen and (max-width: 240px), only screen and (max-device-width:240px) {
+//   html,body {
+//       font-size:24px;
+//   }
+// }
+@fontsize : 75px;
+.rem(@name,@value){//如果是属性名的话，要加{}
+    @{name}:@value/@fontsize*1rem;
+}
+.background-size(@w,@h){background-size: @w/@fontsize*1rem @h/@fontsize*1rem;}
+.h(@value){height:@value/@fontsize*1rem;}
+.w(@value){width:@value/@fontsize*1rem;}
+.fs(@value){font-size: @value/@fontsize*1rem;}
+.margin(@t,@r,@b,@l){margin: @t/@fontsize*1rem @r/@fontsize*1rem @b/@fontsize*1rem @l/@fontsize*1rem;}
+.padding(@t,@r,@b,@l){padding: @t/@fontsize*1rem @r/@fontsize*1rem @b/@fontsize*1rem @l/@fontsize*1rem;}
+.line-height(@value){line-height:@value/@fontsize*1rem;}
+.bottom(@value){bottom:@value/@fontsize*1rem;}
+.top(@value){top:@value/@fontsize*1rem;}
+.border-radius(@value){border-radius:@value/@fontsize*1rem;}
+//这个注释只存在在less文件中
+body{
+    font-family: "微软雅黑";
+    background-color: #f9f9f9;
+}
+
+
+.footer{
+    border-top:1px solid #ccc;
+    background-color: #fff;
+    .margin(23,0,0,0);
+    .h(165);
+    .padding(45,0,0,0);
+    .tc();
+    .links{
+        .margin(0,0,20,0);
+//      display: flex;
+//      justify-content: center;
+//      .fs(28);
+        a{
+           .margin(0,5,0,5);
+           color: #494848;
+           .fs(28);
+        }
+    }
+    
+    .copyright{
+        color: #9a9b9c;
+        .fs(26);
+    }
+}

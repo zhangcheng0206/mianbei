@@ -1,0 +1,162 @@
+@import "z.less";
+@import "public.less";
+.reset();
+
+/*-------------------------顶部导航----------------------*/
+header{
+    .h(94);
+    .padding(0,30,0,30);
+    background-color: #FA3432;
+    color:#fff;
+    display: flex; justify-content: space-between;align-items: center;
+    h2{.fs(30);};
+    .iconfont{.fs(50);}
+}
+
+
+.productDate{
+    .padding(50,0,0,0);
+    .h(222);
+    color:#fff;
+    .tc();
+    background-image: linear-gradient(#ff3c01,#d80607);
+    h3{.fs(68);}
+    p{.margin(20,0,0,0);.fs(30);}
+}
+.productInfo{
+    background-color: #fff;
+    color:#777;
+    .fs(30);
+    display: flex;align-items: center;
+    .h(79);
+    border-bottom:1px solid #f1f0f0;
+    li{flex:1 1 auto;.tc();}
+    li:first-child{border-right:1px solid red;}
+}
+
+.product-support{
+    background-color: #fff;
+    .padding(68,0,0,0);
+    display: flex;
+    div{
+        .fs(24);
+        color:#ffc166;
+        margin:auto;
+        .w(640);
+        .h(200);
+        background: url(../img/detail_icon_bg.png) no-repeat center center;
+        background-size: 100% 100%;
+        
+        span{float:left;width:50%;
+            .h(100);.line-height(100);.tc();
+        }
+        
+    }
+}
+
+//<section class="progress">
+//          
+//          <div class="p-container">
+//              <div class="p-body"></div>
+//              <div class="p-data">37%</div>
+//          </div>
+//      </section>
+.progress{
+    .margin(80,0,0,0);
+    .p-container{
+        margin:0 auto;
+        position:relative;
+        .w(682);.h(16);
+        .border-radius(8);
+        background-color: #f0f0f0;
+        .p-body{
+            transition: width .5s;
+            .border-radius(8);
+            position: absolute;
+            left:0;top:0;
+            .w(0);.h(16);
+            background-color: #FB0502;
+        }
+        .p-data{
+            transition: left .5s;
+            .fs(24);
+            .w(60);.h(32); .line-height(32);
+            color:#fff;
+            .tc();
+            background-color: #FB0502;
+            position: absolute;
+            left:0;top:-30px;
+            .tri{
+                 position: absolute;
+                 left:50%; transform: translateX(-50%); .bottom(-22);
+                .triangle-b(5px,#FB0502);
+            }
+        }
+        
+    }
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    bottom:0;
+    .padding(0,20,0,20);
+    .h(105);
+   
+    background-color: #f0f0f0;
+    
+    span{
+        text-decoration: underline;
+        color:#f90;
+
+        .fs(32);
+    }
+    .btn{
+        background-color:#FA3432;
+        .w(517);.h(82);
+        color:#fff;
+        .tc();
+        .fs(32);
+         .line-height(82);
+    }
+}
+
+.mask{
+    display: none;
+    position: fixed;
+    .top(92);
+    .bottom(105);
+    left:0;
+    right:0;
+    background-color:rgba(0,0,0,.5);
+//  
+    
+    ul{
+        background-color:#fff;
+        .padding(40,0,40,0);
+        display: flex;
+        align-items: center;
+        li{
+            flex: 1 1 auto;
+            border-right: 1px solid #FA3432;
+            a{
+                .fs(24);
+                color:#FA3432;
+               display: flex;
+               flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .iconfont{.fs(40);}
+            }
+            
+        }
+        li:last-child{
+                 border-right:none;
+            }
+    
+    }
+    
+    
+}

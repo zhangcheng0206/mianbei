@@ -1,0 +1,191 @@
+@import "z.less";
+@import "public.less";
+.reset();
+
+/*-------------------------顶部导航----------------------*/
+header{
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .rem(height,94);
+    background-color: #fa3432;
+    .rem(font-size,30);
+    .padding(0,32,0,32);
+    
+    a{
+        color:#fff;
+    }
+    .logo{
+        .h(50);
+        .line-height(50);
+        .padding(0,0,0,50);
+        h1{.rem(font-size,30);}
+        background: url(../img/logo.png) no-repeat left center;
+        .background-size(47,49);
+    }
+    .loginArea{
+        color: #fff;
+    }
+}
+/*-------------------------顶部导航 end----------------------*/
+
+/*-------------------------顶部菜单         ---------------------*/
+.topmenu{
+      background-color: #fff;
+    display: flex;justify-content: space-around;align-items: center;
+    .h(86);
+    .fs(24);
+    a{color: #4b4a4a;}
+    .current{color:#ff3636;}
+}
+/*-------------------------顶部菜单 end----------------------*/
+
+/*-------------------------轮播图 ----------------------*/
+.swipe {
+    overflow: hidden;
+    visibility: hidden;
+    position: relative;
+    
+    .swipe-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+    .swipe-wrap > div {
+      float:left;
+      width:100%;
+      position: relative;
+      
+      a{display: block;}
+    }
+    
+    .slider-indirector{
+        display: flex;
+        .abs();
+        .bottom(20);
+        left:50%;
+        transform: translateX(-50%);
+        li{
+            .w(20);
+            .h(20);
+            border-radius: 50%;
+            background-color: #ccc;
+            margin:5px;
+        }
+        .current{background-color: #fff;}
+        
+    }
+    
+    img{width:100%;} //让图片与整个屏幕一样宽
+    
+}
+/*-------------------------轮播图 end----------------------*/
+
+/*-------------------------快速导航  ----------------------*/
+.quicklinks{
+      background-color: #fff;
+    .h(200);
+    display:flex;justify-content: space-around;align-items: center;
+    a{
+        .fs(24);
+        color:#808080;
+        p{.margin(10,0,10,0);}
+        img{.h(90);.w(90);}
+     }
+    
+}
+/*-------------------------快速导航  end----------------------*/
+/*-------------------------热门产品----------------------*/
+.hot{
+    .padding(0,23,0,23);
+   .title{
+       display: flex;justify-content: space-between;align-items: center;
+       .h(95);
+       color:#494848;
+       background-color: #f9f9f9;
+       .fs(30);
+       .padding(0,0,0,50);
+       background: url(../img/home_ico_09.png) no-repeat left center;
+       .background-size(45,45);
+   }
+   ul{
+       li{
+            background-color: #fff;
+           .h(255);
+           .margin(0,0,25,0);
+           .padding(25,25,25,25);
+           border:1px solid #e9e9e9;
+           .productName{
+               .fs(28);
+               display: flex;justify-content: space-between;align-items: center;
+            }
+            .productInfo{
+                .margin(28,0,0,0);
+                display: flex;
+                .data{
+                    .h(136);.line-height(136);
+                    .margin(0,0,0,43);
+                    em{
+                        color:#FB4034;
+                        .fs(38);
+                    }
+                    span{
+                       color: #FF7900;
+                        .fs(24);
+                    }
+                }
+                .date{
+                    .h(136);
+                    .padding(30,0,0,0);
+                    .margin(0,0,0,87);
+                    em{color:#3d3c3c;}
+                    color:#9a9b9c;
+                    .fs(30);
+                }
+                .circle{
+                    .margin(0,0,0,56);
+                }
+            }
+        }
+   }
+}
+/*-------------------------热门产品  end----------------------*/
+/*-------------------------企业动态----------------------*/
+.news{
+//  
+    .title{
+       
+       
+       display: flex;justify-content: space-between;align-items: center;
+       .h(95);
+       color:#494848;
+       background-color: #f9f9f9;
+       .fs(30);
+       .padding(0,23,0,73);
+ 
+//     background: url(../img/home_ico_10.png) no-repeat left center;
+       .background-size(45,45);
+   }
+   ul{
+        border-top:1px solid #ccc;
+       .padding(35,23,0,23);
+        background-color: #fff;
+        border-bottom:1px solid #ccc;
+       }
+   li{.margin(0,0,35,0);}
+   
+   a{
+       .h(110);
+       display: flex;
+       align-items: center;
+       .fs(24);
+       color:#494848;
+       h4{.margin(0,0,20,0);}
+       p{color:#9a9b9c;display: flex;justify-content: space-between;}
+       img{.margin(0,23,0,0); .w(110);.h(110);flex:0 0 auto;}
+       div{.h(110);flex: 1 1 auto;}
+   }
+}
+
+
+

@@ -1,0 +1,121 @@
+/*我的工具*/
+body {
+  font-family: "微软雅黑";
+  background-color: #f9f9f9;
+}
+.footer {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+  margin: 0.30666667rem 0rem 0rem 0rem;
+  height: 2.2rem;
+  padding: 0.6rem 0rem 0rem 0rem;
+  text-align: center;
+}
+.footer .links {
+  margin: 0rem 0rem 0.26666667rem 0rem;
+}
+.footer .links a {
+  margin: 0rem 0.06666667rem 0rem 0.06666667rem;
+  color: #494848;
+  font-size: 0.37333333rem;
+}
+.footer .copyright {
+  color: #9a9b9c;
+  font-size: 0.34666667rem;
+}
+body,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+ol,
+table,
+form,
+section,
+dl,
+dt,
+dd,
+header,
+footer {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+ol {
+  list-style: none;
+}
+img {
+  border: none;
+  vertical-align: middle;
+}
+input,
+select,
+textarea {
+  outline: none;
+  border: none;
+  background: none;
+}
+textarea {
+  resize: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: normal;
+}
+em,
+i {
+  font-style: normal;
+}
+/*-------------------------顶部导航----------------------*/
+header {
+  height: 1.25333333rem;
+  padding: 0rem 0.4rem 0rem 0.4rem;
+  background-color: #FA3432;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h2 {
+  font-size: 0.4rem;
+}
+header .iconfont {
+  font-size: 0.66666667rem;
+}
+.nav {
+  padding: 0rem 0.4rem 0rem 0.4rem;
+  font-size: 0.33333333rem;
+}
+.nav li {
+  margin: 0.36rem 0rem 0.36rem 0rem;
+}
+.nav a {
+  color: #4c4b4b;
+  display: flex;
+  align-items: center;
+}
+.nav a .iconfont {
+  margin: 0rem 0.28rem 0rem 0rem;
+  text-align: center;
+  color: #fff;
+  width: 0.77333333rem;
+  height: 0.77333333rem;
+  border-radius: 0.13333333rem;
+  line-height: 0.77333333rem;
+  background-color: #FA9A33;
+}
+.nav a .icon-right {
+  margin-left: auto;
+}

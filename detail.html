@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>详情</title>
+		<link rel="stylesheet" href="css/detail.css" />
+		<link rel="stylesheet" href="css/iconfont.css" />
+	</head>
+	<body>
+		<header>
+			<span class="iconfont icon-fanhui"></span>
+			<h2>*****产品介绍</h2>
+			<span id="btnMenu" class="iconfont icon-menu"></span>
+		</header>
+		
+		<section class="productDate">
+			<h3>9.2% + 0.5%</h3>
+			<p>9.7%(9.2% 加息0.5%)</p>
+		</section>
+		<ul class="productInfo">
+			<li>1000元起投</li>
+			<li>期限180天</li>
+		</ul>
+		
+		<section class="product-support">
+			<div>
+				<span>省级法律所法律支持</span>
+				<span>省级法律所法律支持</span>
+				<span>省级法律所法律支持</span>
+				<span>省级法律所法律支持</span>
+			</div>
+		</section>
+		
+		
+		<section class="progress">
+			<div id = "container" class="p-container" data-progress="50">
+				<div id="pbody" class="p-body"></div>
+				<div id="pdata" class="p-data">
+					<span id="pvalue">20%</span>
+					<span class="tri"></span>
+				</div>
+			</div>
+		</section>
+		
+		<div id="mask" class="mask">
+			<ul>
+				<li><a href=""><span class="iconfont icon-book"></span><i>首页</i></a></li>
+				<li><a href=""><span class="iconfont icon-book"></span><i>安全保障</i></a></li>
+				<li><a href=""><span class="iconfont icon-book"></span><i>我要投资</i></a></li>
+				<li><a href=""><span class="iconfont icon-book"></span><i>帐户中心</i></a></li>
+			</ul>
+
+		</div>
+		
+		<footer>
+			<span>收益估算</span>
+			<a class="btn" href="">立刻投资</a>
+		</footer>
+		<script src="js/zeptoJs/zepto.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			 
+			$(function(){
+				var totalWidth = $("#container").width(),
+				 	 maxValue = $("#container").data("progress"),
+				 	 bodywidth = totalWidth * maxValue / 100,
+				 	 timer,
+				 	 currentValue = 0;
+				 $("#pbody").css("width", bodywidth);
+				 
+				//（1）前景色中的width  = 总的宽度* 56%
+				//（2）游标的left        =  前景色中的width - 游标的宽度的一半
+				$("#pdata").css("left", bodywidth - $("#pdata").width() / 2);
+				
+				timer = setInterval(function(){
+					
+					currentValue +=10;
+					
+					if(currentValue >= maxValue){
+						clearInterval(timer);
+						$("#pvalue").html( maxValue + "%");
+					}
+					else{
+						$("#pvalue").html( currentValue + "%");
+					}
+					
+				},50);
+				
+				document.getElementById("btnMenu").addEventListener("touchstart",function(){
+					$("#mask").toggle();
+				});
+			});
+			
+		</script>
+	</body>
+</html>
